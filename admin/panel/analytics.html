@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="../images/kwsh.jpg">
+                    <h2>CTI KWSH</h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">grid_view</span>
+                    <h3>DashBoard</h3>
+                </a>
+                <a href="analytics.html" class="active">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="faq.html">
+                    <span class="material-symbols-outlined">database</span>
+                    <h3>FAQ Database</h3>
+                </a>
+                <a href="unanswered.html">
+                    <span class="material-icons-sharp">contact_support</span>
+                    <h3>Unanswered queries</h3>
+                </a>
+                <a href="livechat.html">
+                    <span class="material-icons-sharp">headset_mic</span>
+                    <h3>Live Chat</h3>
+                </a>
+                <a href="settings.html">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Settings</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of aside -->
+
+        <main>
+            <h1>Analytics</h1>
+            <div class="controls">
+                <label for="year-selector">Select Year:</label>
+                <select id="year-selector">
+                    <!-- Options will be dynamically populated by JavaScript -->
+                </select>
+            </div>
+
+            <div class="button-container">
+                <button id="generate-pdf" class="gen-pdf-btn">
+                    <span class="material-symbols-outlined">download</span>
+                    Generate PDF
+                </button>
+            </div>
+            
+            <button id="reloadButton" class="reload-btn">
+                <span class="material-symbols-rounded">sync</span>
+            </button>
+
+             <div class="charts-container">
+                <div class="chart-wrapper">
+                    <canvas id="escalationRateChart" class="chart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="averageSatisfactionChart" class="chart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="answerRateChart" class="chart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="averageQueryPerVisitorChart" class="chart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="generationTimeChart" class="chart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="hallucinationRateChart" class="chart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="generationEfficiencyChart" class="chart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="irrelevantGenerationRateChart" class="chart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="totalSessionsChart" class="chart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="helpfulMetricsChart" class="chart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="averageRatingsChart" class="chart"></canvas>
+                </div>
+            </div>
+
+            
+
+            <div class="logout-btn-wrapper">
+                <a href="../index.html" class="logout-btn">
+                    <span class="material-icons-sharp">logout</span>
+                    Logout
+                </a>
+            </div>
+
+        </main>
+
+        
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="analytics.js"></script>
+</html>

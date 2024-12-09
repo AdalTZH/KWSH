@@ -1,0 +1,220 @@
+/* Apply box-sizing and remove margin and padding for all elements */
+* {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin: 0;
+    padding: 0;
+}
+/* Body styling: set font, background image, and size */
+body {
+    font-family: 'Nunito', sans-serif; /* Set font family */
+    font-weight: 400; /*set thickness of word(higher means thicker 400 is normal)*/
+    font-size: 100%;
+    background: url('images/handsome_guy.png') no-repeat center center fixed;
+    background-size: cover; /* Cover the entire background area */
+}
+/* Define CSS variables for gradients, box shadows, and primary color */
+*, html {
+    /* color(degree[direction of gradient] go by clockwise for smooth transition between colors,percent is where the color start from the gradient) */
+    --primaryGradient: linear-gradient(93.12deg, #981b1b 0.52%, #e71d1d 100%);
+    --secondaryGradient: linear-gradient(268.91deg, #981b1b -2.14%, #e71d1d 99.69%);
+    /* subtle glow effect(horizontal shift +=>, vertical shift -=^, blur radius +=more blur) */
+    --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
+    --primary: #981b1b;
+}
+
+/* CHATBOX
+=============== */
+/* Position the chatbox at the bottom right corner */
+.chatbox {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+/* Default state of chatbox content: hidden */
+.chatbox__support {
+    display: flex;
+    flex-direction: column;
+    background: #eee;
+    width: 500px;
+    height: 650px;
+    z-index: -123456; /* Stack below other elements(high number stack infront of lower number) */
+    opacity: 0;/* Fully transparent */
+    transition: all .5s ease-in-out;/* Smooth transition for all properties */
+}
+
+/* Active state of chatbox content: visible and on top */
+.chatbox--active {
+    transform: translateY(-40px);/* move chatbox up by 40pixel */
+    z-index: 123456;/* Stack above other elements */
+    opacity: 1;/* Fully opaque */
+
+}
+
+/* BUTTON */
+/* Align chatbox button to the right */
+.chatbox__button {
+    text-align: right;
+}
+/* Style for send and mic buttons */
+.send__button,
+.mic__button {
+    padding: 6px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;/* Change cursor to pointer on hover */
+    display: inline-block;
+}
+/* Style for images inside send and mic buttons */
+.send__button img,
+.mic__button img {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* HEADER */
+/* Sticky header for chatbox */
+.chatbox__header {
+    position: sticky;/* Make the header stick to the top */
+    top: 0;
+    background: orange;/* Set background color to orange */
+}
+
+/* MESSAGES */
+/* Messages container styling */
+.chatbox__messages {
+    margin-top: auto;/* Push down to the bottom */
+    display: flex;
+    overflow-y: scroll;/* Enable vertical scrolling */
+    flex-direction: column-reverse;/* Arrange children in reverse column order */
+}
+/* Individual message styling */
+.messages__item {
+    background: orange;
+    max-width: 60.6%;
+    width: fit-content;/* Fit width to the content */
+}
+/* Align KACA messages to the left */
+.messages__item--operator {
+    margin-left: auto;
+}
+/* Align user messages to the right */
+.messages__item--visitor {
+    margin-right: auto;
+}
+
+/* FOOTER */
+/* Sticky footer for chatbox */
+.chatbox__footer {
+    position: sticky;
+    bottom: 0;
+}
+/* Support chatbox container styling */
+.chatbox__support {
+    background: #f9f9f9;/* Set background for chat window color */
+    height: 650px;
+    width: 500px;
+    /* subtle glow effect(horizontal shift +=>, vertical shift -=^, blur radius +=more blur) */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 20px;/* Rounded top-left corner */
+    border-top-right-radius: 20px;
+}
+
+/* HEADER */
+/* Chatbox header styling */
+.chatbox__header {
+    background: var(--primaryGradient);/* Apply primary gradient */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: var(--primaryBoxShadow);/* Apply primary box shadow */
+}
+/* Header image styling */
+.chatbox__image--header {
+    margin-right: 10px;
+}
+/* Header heading styling */
+.chatbox__heading--header {
+    font-size: 1.4rem;
+    color: white;
+}
+/* Header description styling */
+.chatbox__description--header {
+    font-size: 1.1rem;
+    color: white;
+}
+
+/* Messages container padding */
+.chatbox__messages {
+    padding: 0 20px;
+}
+/* Individual message item styling */
+.messages__item {
+    margin-top: 10px;
+    background: #E0E0E0;
+    padding: 12px 16px;
+    max-width: 90%;
+}
+/* Visitor and typing message item styling */
+.messages__item--visitor,
+.messages__item--typing {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+/* Operator message item styling */
+.messages__item--operator {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background: var(--primary);
+    color: white;
+}
+
+/* FOOTER */
+/* Chatbox footer styling */
+.chatbox__footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    background: var(--secondaryGradient);
+    box-shadow: var(--secondaryBoxShadow);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-top: 20px;
+}
+/* Footer input styling */
+.chatbox__footer input {
+    width: 85%;
+    border: none;
+    padding: 16px 20px;
+    border-radius: 30px;
+    text-align: left;
+}
+/* Send button styling */
+.chatbox__send--footer {
+    color: white;
+}
+/* Chatbox button styling */
+.chatbox__button button,
+.chatbox__button button:focus,
+.chatbox__button button:visited {
+    padding: 10px;
+    background: white;
+    border: none;
+    outline: none;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}

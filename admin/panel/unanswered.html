@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unanswered Queries</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="../images/kwsh.jpg">
+                    <h2>CTI KWSH</h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">grid_view</span>
+                    <h3>DashBoard</h3>
+                </a>
+                <a href="analytics.html">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="faq.html">
+                    <span class="material-symbols-outlined">database</span>
+                    <h3>FAQ Database</h3>
+                </a>
+                <a href="unanswered.html" class="active">
+                    <span class="material-icons-sharp">contact_support</span>
+                    <h3>Unanswered queries</h3>
+                </a>
+                <a href="livechat.html">
+                    <span class="material-icons-sharp">headset_mic</span>
+                    <h3>Live Chat</h3>
+                </a>
+                <a href="settings.html">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Settings</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of aside -->
+
+        <main>
+            <h1>Unanswered Queries</h1>
+            <div class="queries-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Query</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="query-tbody">
+                        <!-- Rows will be dynamically inserted here from the database -->
+                    </tbody>
+                </table>
+
+                <div class="pagination">
+                    <button id="prev-btn">Previous</button>
+                    <button id="next-btn">Next</button>
+                </div>
+            </div>
+
+        </main>
+
+        <div id="view-query-container" class="form-overlay" style="display: none;">
+            <div class="form-content">
+                <button id="close-view-query-btn" class="close-form-btn">
+                    <span class="material-symbols-outlined">cancel</span>
+                </button>
+                <form id="view-query-form">
+                    <label for="view-query-text">Query:</label>
+                    <textarea id="view-query-text" name="query" rows="4" cols="50" readonly></textarea>
+                </form>
+            </div>
+        </div>
+
+            <div class="logout-btn-wrapper">
+                <a href="../index.html" class="logout-btn">
+                    <span class="material-icons-sharp">logout</span>
+                    <p>Logout</p>
+                </a>
+            </div>
+        <!-- Top end -->
+        </div>
+    </div>
+
+    <script src="Uqueries.js"></script>
+ 
+</body>
+</html>
